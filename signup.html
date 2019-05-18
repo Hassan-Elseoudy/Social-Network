@@ -1,4 +1,4 @@
-
+<
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,18 +7,15 @@
   <title>Signup for facebook! </title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
-  <link rel="stylesheet" href="css/sign-up.css">
-
+  <link rel="stylesheet" href="css/signup.css">
 
 </head>
 
 <body>
 
-  <section class="logina-form-wrap">
+  <section class="login-form-wrap">
     <h1>Facebook</h1>
-    <form class="login-form" action="PHP/signup.php" method="post">
+    <form class="login-form" action="PHP/signup.php" method="POST" enctype="multipart/form-data">
       <label>
         <input type="text" name="firstName" required placeholder="First Name">
       </label>
@@ -50,7 +47,7 @@
       </label>
       <label style="color:white;">
         Upload your image!
-        <input type="file" name="pic" accept="image/*">
+        <input id = "uploadBox" type="file" name="pic">
       </label>
       <label>
         <input type="text" name="homeTown" placeholder="Home Town">
@@ -66,7 +63,7 @@
       <label>
         <textarea rows="4" cols="31" name="me" placeholder="About You." style="margin: 5px auto 0 auto;"></textarea>
       </label>
-      <input type="submit" value="Register" name="Registers">
+      <input type="submit" value="Register" name="reg">
     </form>
   </section>
 </body>
