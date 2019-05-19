@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/sign-up.css">
 
+
 </head>
 
 <body>
 
-  <section class="login-form-wrap">
+  <section class="logina-form-wrap">
     <h1>Facebook</h1>
-    <form class="login-form" action="PHP/signup.php" method="POST" enctype="multipart/form-data">
+   <form  name="Register" action="PHP/signup.php" method="post" >
       <label>
         <input type="text" name="firstName" required placeholder="First name">
       </label>
@@ -22,7 +23,7 @@
         <input type="text" name="lastName" required placeholder="Last name">
       </label>
       <label>
-        <input type="text" name="nickName" placeholder="Nickname">
+        <input type="text" name="nickName" placeholder="nick Name">
       </label>
       <label>
         <input type="password" name="Password" required placeholder="Password">
@@ -46,7 +47,7 @@
       </label>
       <label style="color:white;">
         Upload your image!
-        <input id = "uploadBox" type="file" name="pic">
+        <input type="file" name="pic" accept="image/*">
       </label>
       <label>
         <input type="text" name="homeTown" placeholder="Home Town">
@@ -62,7 +63,7 @@
       <label>
         <textarea rows="4" cols="31" name="me" placeholder="About You." style="margin: 5px auto 0 auto;"></textarea>
       </label>
-      <input type="submit" value="Register" name="reg">
+      <input  type="submit" value="Register" name="reg">
     </form>
   </section>
 </body>
