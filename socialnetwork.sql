@@ -15,12 +15,12 @@ CREATE TABLE user_(
 	birth_date varchar(255),
 	user_gender varchar(255),
 	number_friends int , 
-	user_image IMAGE,
+	user_image blob,
 	PRIMARY KEY (user_email)
 );
 
 CREATE TABLE friendship (
-	date timestamp,
+	date_ timestamp,
     request_status tinyint(1),
     user_email varchar(255),
     friend_email varchar(255),
