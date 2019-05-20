@@ -55,7 +55,7 @@
                                     <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Welcome to Social Network</h2>
                                 </header>
                                 <div>
-                                    <?php include 'PHP/data.php';?>
+                                    <?php include 'PHP/Personal_Info/Personal_info.php';?>
                                 </div>
                             </section>
                             <!-- About section -->
@@ -63,12 +63,9 @@
                                 <div class="row">                                                                
                                     <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 push-lg-4 push-md-5">
                                         <header>
-                                            <h2 class="tm-blue-text tm-section-title tm-margin-b-45">About the team</h2>
+                                            <h2 class="tm-blue-text tm-section-title tm-margin-b-45">Check out your friends!</h2>
                                         </header>
-                                        <p>Sed turpis nunc, laoreet sit amet fermentum sed, euismod ac justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                                        <p>Donec ut lectus semper, sollicitudin risus blandit, mattis felis. Nam non malesuada odio. Vestibulum vaius, arcu eget rutrum consequat, arcu lacus imperdiet arcu, id pulvinar arcu erat vel magna.</p>
-                                        <p>Ut commodo malesuada eros, quis consequat ante tincidunt ut. Suspendisse malesuada augue vitae nisi sollicitudin placerat.</p>
-                                        <a href="#" class="tm-button tm-button-wide">Read More</a>  
+                                        <?php include 'PHP/Personal_Info/Friends_info.php';?>                                   
                                     </div>
 
                                     <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 pull-lg-8 pull-md-7 tm-about-img-container">
@@ -103,10 +100,11 @@
                             <section id="secondgallery" class="tm-section">
                                 <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Search for a user</h2></header>
                                 <div class="tm-gallery-container tm-gallery-2">
-                                    <form action="PHP/profile.php" method="post">
+                                    <form method="post">
                                         <input type="text" name="search" placeholder="Enter name">
                                         <br><br>
-                                        <a href="#" type="submit" class="tm-button tm-button-wide">Search by Name Or Nick name</a>
+                                        <input type="submit" class="tm-button" name="search_">
+                                        <?php if (isset($_POST['search_'])){include "PHP/Personal_Info/Search_info.php" ;}?>
                                     </form>                                  
                                 </div>
                             </section>

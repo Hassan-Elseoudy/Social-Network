@@ -18,11 +18,10 @@ CREATE TABLE user_(
 
 CREATE TABLE friendship (
 	date_ timestamp,
-    request_status tinyint(1),
+    request_status varchar(1),
     user_email varchar(255),
     friend_email varchar(255),
 	PRIMARY KEY (friend_email,user_email),
 	FOREIGN KEY (user_email) REFERENCES user_(user_email),
     FOREIGN KEY (friend_email) REFERENCES user_(user_email)
 );
-
