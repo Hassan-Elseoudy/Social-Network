@@ -16,9 +16,6 @@ if ($conn->connect_error)
     } 
     else
         {  
-         
-    	if(isset($_POST['search']))
-    	{
         		
 	                if(isset($_POST['requests']))
             {
@@ -44,10 +41,7 @@ if ($conn->connect_error)
                     if(isset($_POST['reject']))
                   {
                      $sql="UPDATE user_ set request_status='0' WHERE "; //same
-                  }    
-                  
-            
-                     
+                  }        
             }
 		}	
 

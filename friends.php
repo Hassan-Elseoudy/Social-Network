@@ -52,7 +52,7 @@
                             <!-- Welcome section -->
                             <section id="welcome" class="tm-section">
                                 <header>
-                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Welcome to Social Network</h2>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Welcome to your Social Network!</h2>
                                 </header>
                                 <div>
                                     <?php include 'PHP/Personal_Info/Personal_info.php';?>
@@ -76,23 +76,9 @@
 
                             <!-- Gallery One section -->     
                             <section id="galleryone" class="tm-section">
-                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Gallery One</h2></header>
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Accept or Reject!</h2></header>
                                 <div class="tm-gallery-container tm-gallery-1">
-                                    <div class="tm-img-container tm-img-container-1">
-                                        <a href="img/neaty-03.jpg"><img src="img/neaty-03.jpg" alt="Image" class="img-fluid tm-img-tn"></a>    
-                                    </div>
-                                    <div class="tm-img-container tm-img-container-1">
-                                        <a href="img/neaty-04.jpg"><img src="img/neaty-04.jpg" alt="Image" class="img-fluid tm-img-tn"></a>    
-                                    </div>
-                                    <div class="tm-img-container tm-img-container-1">
-                                        <a href="img/neaty-05.jpg"><img src="img/neaty-05.jpg" alt="Image" class="img-fluid tm-img-tn"></a>    
-                                    </div>
-                                    <div class="tm-img-container tm-img-container-1">
-                                        <a href="img/neaty-06.jpg"><img src="img/neaty-06.jpg" alt="Image" class="img-fluid tm-img-tn"></a>    
-                                    </div>
-                                    <div class="tm-img-container tm-img-container-1">
-                                        <a href="img/neaty-07.jpg"><img src="img/neaty-07.jpg" alt="Image" class="img-fluid tm-img-tn"></a>    
-                                    </div>                                    
+                                <?php include 'PHP/Personal_Info/Requests_info.php';?>
                                 </div>
                             </section>
 
