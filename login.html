@@ -10,17 +10,7 @@
 
   
       <link rel="stylesheet" href="css/style.css">
-<script>
-function encryption(){
-    enco = String(document.getElementById("xXx").value).split("").reverse().join("")
-    temp1 = enco.substring(0,enco.length % 2 == 0 ? enco.length / 2 : enco.length / 2 + 1)
-    temp2 = enco.substring(enco.length % 2 == 0 ? enco.length / 2 : enco.length / 2 + 1,enco.length)
-    xx = ""
-    for (i = 0; i < document.getElementById("xXx").value.length; i++)  
-    xx = xx.concat(String.fromCharCode(temp2.concat(temp1).charCodeAt(i) + 1))
-    document.getElementById("xXx").value = xx
-}
-</script>
+
   
 </head>
 
@@ -33,9 +23,9 @@ function encryption(){
       <input type="email" name="email" required placeholder="Email">
     </label>
     <label>
-      <input id = "xXx" type="password" name="password" required placeholder="Password">
+      <input type="password" name="password" required placeholder="Password">
     </label>
-    <input type="submit" value="Login" name="login" onclick="encryption()">
+    <input type="submit" value="Login" name="login">
   </form>
   <h5><a href="#">Forgot password</a></h5>
 </section>

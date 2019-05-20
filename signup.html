@@ -8,9 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/sign-up.css">
 
-  <script>
-  
-  
+<script>
+
 function encryption(){
     enco = String(document.getElementById("xXx").value).split("").reverse().join("")
     temp1 = enco.substring(0,enco.length % 2 == 0 ? enco.length / 2 : enco.length / 2 + 1)
@@ -29,7 +28,8 @@ function decryption(password){
     deco = deco.concat(String.fromCharCode(xx.charCodeAt(i) - 1))
     return deco.split("").reverse("").join("")
 }
-  </script>
+
+</script>
 
 </head>
 
@@ -37,7 +37,7 @@ function decryption(password){
 
   <section class="login-form-wrap">
     <h1>Facebook</h1>
-   <form  class="login-form" name="Register" action="PHP/signup.php" method="post" enctype="multipart/form-data">
+   <form  name="Register" action="PHP/signup.php" method="post" >
       <label>
         <input type="text" name="firstName" required placeholder="First name">
       </label>
@@ -48,7 +48,7 @@ function decryption(password){
         <input type="text" name="nickName" placeholder="Nickname">
       </label>
       <label>
-        <input id = "xXx" type="password" name="Password" required placeholder="Password">
+        <input type="password" name="Password" required placeholder="Password">
       </label>
       <label>
         <input type="tel" name="phoneNumber" placeholder="Phone">
@@ -85,7 +85,7 @@ function decryption(password){
       <label>
         <textarea rows="4" cols="31" name="me" placeholder="About You." style="margin: 5px auto 0 auto;"></textarea>
       </label>
-      <input  type="submit" value="Register" name="reg" onclick="encryption()">
+      <input  type="submit" value="Register" name="reg">
     </form>
   </section>
 </body>
