@@ -25,6 +25,22 @@ if ($conn->connect_error)
                         .$_SESSION['friendstatus'].'<br> '
                         .$_SESSION['friendphone'].'<br> '
                         ;  
+                        $memail=$_SESSION['email'];
+                        $mfemail=$_SESSION['friendemail'];
+
+            if(isset($_POST['add']))
+            {   // header("location:login.php");
+
+               
+            $qry = mysqli_query($conn,"INSERT INTO friendship (user_email, friend_email ,request_status)VALUES('$memail',
+                '$mfemail','1')");
+            if($qry)
+            {
+                echo "your friend request done";
+            }
+
+            }
+
            
 
 	
@@ -34,3 +50,16 @@ if ($conn->connect_error)
 }
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+ <form action="" method="post">
+    
+    <input type="submit" value="Add friend" name="add">
+    
+    </form>
+</body>
+</html>

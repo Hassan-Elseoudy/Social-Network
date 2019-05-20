@@ -16,20 +16,6 @@ if ($conn->connect_error)
     } 
     else
         {  
-           
-            if(isset($_POST['show']))
-            {
-              
-              echo $_SESSION['firstname'].' <br>'
-                        .$_SESSION['lastname'].'<br> '
-                        .$_SESSION['email'].'<br> '
-                        .$_SESSION['gender'].'<br> '
-                        .$_SESSION['hometown'].'<br> '
-                        .$_SESSION['aboutme'].'<br> '
-                        .$_SESSION['status'].'<br> '
-                        .$_SESSION['phone'].'<br> '
-                        .$_SESSION['bday'].' <br>';          
-            }
          
     	if(isset($_POST['search']))
     	{
@@ -56,19 +42,98 @@ if ($conn->connect_error)
                                         $_SESSION['friendbday']=$row['birth_date'];
         			$output.='<div> 
                     <a href="user.php">' .$fname.' '.$lname;
-
-               // }
                
         		}
 
                 echo $output.'</a></div>';
-
     	}
 
-	
-			
+	  if(isset($_POST['show']))
+            {
+              
+              echo $_SESSION['firstname'].' <br>'
+                        .$_SESSION['lastname'].'<br> '
+                        .$_SESSION['email'].'<br> '
+                        .$_SESSION['gender'].'<br> '
+                        .$_SESSION['hometown'].'<br> '
+                        .$_SESSION['aboutme'].'<br> '
+                        .$_SESSION['status'].'<br> '
+                        .$_SESSION['phone'].'<br> '
+                        .$_SESSION['bday'].' <br>';          
+            }
+              if(isset($_POST['friends']))
+            {
+
+             // $search=$_POST['search'];
+                //$search=preg_replace("#[^0-9a-z]#i", "", $search);
+                $uemail=$_SESSION['email'];
+                
+                $q=mysqli_query($conn,"SELECT * FROM friendship WHERE user_email= '$uemail' and request_status='0'");
+                $count=mysqli_num_rows($q);
+                if($count==0)
+                    $output='no friends';
+                else
+                {
+                    while($row=mysqli_fetch_array($q))
+                    {
+                    
+                   
+                    $friend=$row['friend_email'];
+                    $output.='<div> <br>
+                    <a href="user.php">' .$friend;
+                   }
+                      echo $output.'</a></div>';
+
+                    
+            }
+        }
+              if(isset($_POST['requests']))
+            {
+                $uemail=$_SESSION['email'];
+                $femail=$_SESSION['friendemail'];
+                $q=mysqli_query($conn,"SELECT * FROM friendship WHERE user_email= '$uemail' and request_status='1'");
+                $count=mysqli_num_rows($q);
+                if($count==0)
+                    $output='no friends request';
+
+                else
+                {echo "Number of Requests ".$count;
+                    while($row=mysqli_fetch_array($q))
+                    {
+                        $friend=$row['friend_email'];
+                        echo '<div> <br>
+                        <a href="user.php">' .$friend; 
+                   }
+                  if(isset($_POST['accept']))
+                  {
+                    $sql="UPDATE user_ set request_status='0' WHERE "; //hna 3wza a3rafl button eliidost3leh anhy friend
+                  }
+                    if(isset($_POST['reject']))
+                  {
+                     $sql="UPDATE user_ set request_status='0' WHERE "; //same
+                  }    
+                  
+            
+                     
+            }
+		}	
 
    $conn->close();
 }
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+ <form action="" method="post">
+    
+    <input type="submit" value="accept" name="accept">
+    <input type="submit" value ="reject" name="reject">
+
+    
+    </form>
+</body>
+</html>

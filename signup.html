@@ -8,39 +8,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/sign-up.css">
 
-  <script>
-  
-  
-function encryption(){
-    alert(document.getElementById("xXx").value)
-    enco = String(document.getElementById("xXx").value).split("").reverse().join("")
-    temp1 = enco.substring(0,enco.length % 2 == 0 ? enco.length / 2 : enco.length / 2 + 1)
-    temp2 = enco.substring(enco.length % 2 == 0 ? enco.length / 2 : enco.length / 2 + 1,enco.length)
-    xx = ""
-    for (i = 0; i < document.getElementById("xXx").value.length; i++)  
-    xx = xx.concat(String.fromCharCode(temp2.concat(temp1).charCodeAt(i) + 1))
-    document.getElementById("xXx").value = xx
-    alert(xx)
-    alert(document.getElementById("xXx").value)
-}
- 
-function decryption(password){
-    xx = String(password)
-    xx = xx.substring(xx.length / 2, xx.length).concat(xx.substring(0,xx.length / 2))
-    deco = ""
-    for (i = 0; i < password.length; i++)  
-    deco = deco.concat(String.fromCharCode(xx.charCodeAt(i) - 1))
-    return deco.split("").reverse("").join("")
-}
-  </script>
 
 </head>
 
 <body>
 
-  <section class="login-form-wrap">
+  <section class="logina-form-wrap">
     <h1>Facebook</h1>
-   <form  class="login-form" name="Register" action="PHP/signup.php" method="post" enctype="multipart/form-data">
+   <form  name="Register" action="PHP/signup.php" method="post" >
       <label>
         <input type="text" name="firstName" required placeholder="First name">
       </label>
@@ -48,10 +23,10 @@ function decryption(password){
         <input type="text" name="lastName" required placeholder="Last name">
       </label>
       <label>
-        <input type="text" name="nickName" placeholder="Nickname">
+        <input type="text" name="nickName" placeholder="nick Name">
       </label>
       <label>
-        <input id = "xXx" type="password" name="Password" required placeholder="Password">
+        <input type="password" name="Password" required placeholder="Password">
       </label>
       <label>
         <input type="tel" name="phoneNumber" placeholder="Phone">
@@ -88,7 +63,7 @@ function decryption(password){
       <label>
         <textarea rows="4" cols="31" name="me" placeholder="About You." style="margin: 5px auto 0 auto;"></textarea>
       </label>
-      <input  type="submit" value="Register" name="reg" onclick="encryption()">
+      <input  type="submit" value="Register" name="reg">
     </form>
   </section>
 </body>
