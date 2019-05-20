@@ -17,20 +17,6 @@ if ($conn->connect_error)
     else
         {  
            
-            if(isset($_POST['show']))
-            {
-              
-              echo $_SESSION['firstname'].' <br>'
-                        .$_SESSION['lastname'].'<br> '
-                        .$_SESSION['email'].'<br> '
-                        .$_SESSION['gender'].'<br> '
-                        .$_SESSION['hometown'].'<br> '
-                        .$_SESSION['aboutme'].'<br> '
-                        .$_SESSION['status'].'<br> '
-                        .$_SESSION['phone'].'<br> '
-                        .$_SESSION['bday'].' <br>';          
-            }
-         
     	if(isset($_POST['search']))
     	{
         		$search=$_POST['search'];

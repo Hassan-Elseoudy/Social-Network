@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Social Network: Friends</title>
+    <title>Social Network</title>
 
     <!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
@@ -33,7 +33,10 @@
                                     <a href="#about" class="tm-nav-item-link">Your friends</a>
                                 </li>
                                 <li class="tm-nav-item">
-                                    <a href="#galleryone" class="tm-nav-item-link">Your friend requests.</a>
+                                    <a href="#galleryone" class="tm-nav-item-link">Your requestes</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#secondgallery" class="tm-nav-item-link">Search for a user</a>
                                 </li>
                             </ul>
                         </nav>                                         
@@ -41,13 +44,19 @@
                     
                     <!-- Right column: content -->
                     <div class="tm-right-column">
+                        <figure>
+                            <img src="img/neaty-01.jpg" alt="Header image" class="img-fluid">    
+                        </figure>
+
                         <div class="tm-content-div">
                             <!-- Welcome section -->
                             <section id="welcome" class="tm-section">
                                 <header>
-                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Welcome to Neaty Design</h2>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Welcome to Social Network</h2>
                                 </header>
-                                <p>Neaty is simple and clean design HTML CSS template for any kind of website. Feel free to use this layout. Please tell your friends about templatemo website. Thank you. Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at, eleifend justo. Quisque placerat ante in ex tempor, ultrices bibendum nunc finibus. Etiam luctus nec eros vel pulvinar.</p>
+                                <div>
+                                    <?php include 'PHP/data.php';?>
+                                </div>
                             </section>
                             <!-- About section -->
                             <section id="about" class="tm-section">
@@ -67,6 +76,7 @@
                                     </div>  
                                 </div>                            
                             </section>  
+
                             <!-- Gallery One section -->     
                             <section id="galleryone" class="tm-section">
                                 <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Gallery One</h2></header>
@@ -88,7 +98,25 @@
                                     </div>                                    
                                 </div>
                             </section>
+
+                            <!-- Second Gallery section -->     
+                            <section id="secondgallery" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Search for a user</h2></header>
+                                <div class="tm-gallery-container tm-gallery-2">
+                                    <form action="PHP/profile.php" method="post">
+                                        <input type="text" name="search" placeholder="Enter name">
+                                        <br><br>
+                                        <a href="#" type="submit" class="tm-button tm-button-wide">Search by Name Or Nick name</a>
+                                    </form>                                  
+                                </div>
+                            </section>
+                            <footer>
+                                <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2017</span> Your Company 
+                                
+                                | Designed by <a href="http://www.templatemo.com" target="_parent">templatemo</a></p>
+                            </footer>
                         </div>  
+                        
                     </div> <!-- Right column: content -->
                 </div>
             </div> <!-- row -->

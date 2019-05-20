@@ -1,9 +1,10 @@
 create database socialnetwork;
-CREATE TABLE if not exists user_ (
+
+CREATE TABLE if not exists user_(
 	first_name varchar(255) not null,
 	last_name varchar(255) not null,
 	nick_name varchar(255) not null,
-	pass_word int not null,
+	pass_word varchar(255) not null,
 	user_email varchar(255) unique not null,
 	phone_number varchar(255),
 	home_town varchar(255) ,
@@ -13,7 +14,7 @@ CREATE TABLE if not exists user_ (
 	user_gender varchar(255),
 	number_friends int , 
 	user_image BLOB,
-	PRIMARY KEY (user_email,nick_name)
+	PRIMARY KEY (user_email)
 );
 
 CREATE TABLE if not exists friendship (

@@ -18,12 +18,21 @@ else {
 
 		// If user submitted form
 		if (isset($_POST['reg']))
-		{        
+		{ 
 			$firstname = $_POST['firstName'];
 			$lastname = $_POST['lastName'];
 			$nickname = $_POST['nickName'];
 			$password = $_POST['Password'];
 			$email = $_POST['Email'];
+			$q=mysqli_query($conn,"SELECT * FROM user_ WHERE user_email='$email'");
+    	$row=mysqli_fetch_array($q);
+    	if($row['user_email']==$email){
+				$message = "Email is used, did you forgot your password?";
+				echo "<script type='text/javascript'>
+				alert('$message'); 
+				location = '../signup.html';
+				</script>";
+			}
 		  $phone = $_POST['phoneNumber'];
 			$aboutme = $_POST['me'];
 			$mstatus = $_POST['status'];
