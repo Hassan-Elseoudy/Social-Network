@@ -37,7 +37,7 @@ if ($conn->connect_error)
                 $_SESSION['aboutme'] = $row['about_me'];
                 $_SESSION['status'] = $row['user_status'];
                 $_SESSION['phone'] = $row['phone_number'];
-								$_SESSION['bday'] = $row['birth_date'];
+				$_SESSION['bday'] = $row['birth_date'];
     			header('Location: ../friends.php');
     		}
     		else

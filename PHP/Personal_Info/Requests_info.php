@@ -14,13 +14,17 @@ color: #1F4DFF;
 margin-bottom:0px;
 }
 #demo{
-    font-size: 10px;
+    font-size: 0px;
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script>
     function acceptOrReject(obj,obj_){
         document.getElementById(\'demo\').innerHTML = obj;
-        alert(obj_);
+        var obj_ = obj_.slice(-3);
+        $.post(\'PHP/Personal_Info/Database_issues.php\',{postname:obj_,postemail:obj},function(data){
+            $(\'#result\').html(data);
+        });
     }
 </script>
 </head>
@@ -43,26 +47,23 @@ else{
         while($row = mysqli_fetch_array($q)){
             $friend = $row['friend_email'];
             $output .= "<p id = \"req$i\">". $friend ."</p>";
-           // $output .= "<form  method='POST' action='Database_issues.php'>";
-            $xx = 'req'.$i.'rej';
+            $xx = 'req'.$i.'acc';
             $output .= "<button onclick = \"acceptOrReject('$friend','$xx')\"  id = '$xx' class='tm-button'>Accept</button>";
-            $yy = 'req'.$i.'acc';
-            $output .= "<button onclick = \"acceptOrReject('$friend')\"  id = '$yy' class='tm-button'>Reject</button>";  
-           // $output .= "</form>";
+            $yy = 'req'.$i.'rej';
+            $output .= "<button onclick = \"acceptOrReject('$friend','$yy')\"  id = '$yy' class='tm-button'>Reject</button>";  
             $i++;
         }
 
         while($row = mysqli_fetch_array($w)){
             $friend = $row['user_email'];
             $output .= "<p id = \"req$i\">". $friend ."</p>";
-            //$output .= "<form  method='POST' action='Database_issues.php'>";
-            $xx = 'req'.$i.'rej';
+            $xx = 'req'.$i.'acc';
             $output .= "<button onclick = \"acceptOrReject('$friend','$xx')\"  id = '$xx' class='tm-button'>Accept</button>";
-            $yy = 'req'.$i.'acc';
-            $output .= "<button onclick = \"acceptOrReject('$friend')\"  id = '$yy' class='tm-button'>Reject</button>";  
-            //$output .= "</form>";
+            $yy = 'req'.$i.'rej';
+            $output .= "<button onclick = \"acceptOrReject('$friend','$yy')\"  id = '$yy' class='tm-button'>Reject</button>";  
             $i++;
         }
+        $output .= "<div id='result'></div>";
     echo $output;
    $conn->close();
 }
