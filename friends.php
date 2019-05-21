@@ -91,7 +91,13 @@
                                         <br><br>
                                         <input type="submit" class="tm-button" name="search_">
                                         <?php if (isset($_POST['search_'])){include "PHP/Personal_Info/Search_info.php" ;}?>
-                                    </form>                                  
+
+                                    </form> 
+                                     <form style="padding-top: 20px; color: gray;border-radius: 5px;" action="" method="post">
+    
+                                     <input type="submit" value="Add friend" name="add">
+                                       <?php if (isset($_POST['add'])){include "PHP/Personal_Info/go.php" ;}?>
+                                      </form>                                 
                                 </div>
                             </section>
                             <footer>
